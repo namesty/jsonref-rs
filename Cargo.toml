@@ -1,12 +1,12 @@
 [package]
-name = "jsonref"
-version = "0.4.0"
-edition = "2021"
+name = "polywrap-jsonref"
+version = "0.1.0"
+edition = "2022"
 description = "Deref your JSONSchema here!"
 license = "MIT"
-authors = ["David Raznick <david.raznick@opendataservices.org>"]
-repository = "https://github.com/kindly/jsonref-rs"
-homepage = "https://github.com/kindly/jsonref-rs"
+authors = ["David Raznick <david.raznick@opendataservices.org>", "Nestor Amesty <nestor@polywrap.io>"]
+repository = "https://github.com/namesty/jsonref-rs"
+homepage = "https://github.com/namesty/jsonref-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

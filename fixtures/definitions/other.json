@@ -1,0 +1,10 @@
+{
+  "title": "22title",
+  "properties": {
+    "prop1": { "title": "22sub property title in base.json" },
+    "prop3": { "$ref": "#/definitions/def2" }
+  },
+  "definitions": {
+    "def2": { "title": "def2" }
+  }
+}

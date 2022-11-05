@@ -1,0 +1,17 @@
+{
+  "title": "title from file",
+  "properties": {
+    "prop1": { "title": "sub property title in base.json" },
+    "prop3": {
+      "title": "22title",
+      "properties": {
+        "prop1": { "title": "22sub property title in base.json" },
+        "prop3": { "$ref": "#/definitions/def2" }
+      }
+    }
+  },
+  "definitions": {
+    "def1": { "title": "def1" },
+    "def2": { "title": "def2" }
+  }
+}
