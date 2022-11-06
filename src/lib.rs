@@ -234,6 +234,9 @@ impl JsonRef {
         let mut definitions = json!({});
 
         self.deref(value, anon_file_url, &vec![], &mut definitions)?;
+
+        let val = value.as_object_mut().unwrap();
+        val.insert("definitions".to_string(), definitions);
         Ok(())
     }
 
@@ -265,6 +268,10 @@ impl JsonRef {
         self.schema_cache.insert(url.to_string(), value.clone());
         let mut definitions = json!({});
         self.deref(&mut value, url.to_string(), &vec![], &mut definitions)?;
+        
+        let val = value.as_object_mut().unwrap();
+        val.insert("definitions".to_string(), definitions);
+
         Ok(value)
     }
 
