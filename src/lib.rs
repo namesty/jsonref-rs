@@ -100,7 +100,7 @@ impl Remove for serde_json::Value {
     /// assert_eq!(r#"{"field1.0":{"field1.1":"value1.1"},"field2.0":"value2.0"}"#,object1.to_string());
     /// ```
     fn remove(&mut self, json_pointer: &str) -> io::Result<Option<Value>> {
-        let fields: Vec<&str> = json_pointer.split("/").skip(1).collect();
+        let fields: Vec<&str> = json_pointer.split('/').skip(1).collect();
 
         remove(self, fields)
     }
@@ -130,7 +130,7 @@ fn remove(json_value: &mut Value, fields: Vec<&str>) -> io::Result<Option<Value>
                                 "{}. Can't find the field '{}' in {}.",
                                 e,
                                 field,
-                                json_value.to_string()
+                                json_value
                             ),
                         ))
                     }
@@ -143,7 +143,7 @@ fn remove(json_value: &mut Value, fields: Vec<&str>) -> io::Result<Option<Value>
                             "removal index (is {}) should be < len (is {}) from {}",
                             index,
                             len,
-                            json_value.to_string()
+                            json_value
                         ),
                     ));
                 }
@@ -179,10 +179,10 @@ pub struct JsonRef {
 impl JsonRef {
     /// Create a new instance of JsonRef.
     pub fn new() -> JsonRef {
-        return JsonRef {
+        JsonRef {
             schema_cache: HashMap::new(),
             reference_key: None,
-        };
+        }
     }
 
     /// Set a key to store the data that the `$ref` replaced.
